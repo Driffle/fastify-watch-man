@@ -68,7 +68,7 @@ declare namespace fastifyRateLimit {
     rateRemaining?: string;
     rateReset?: string;
     retryAfter?: string;
-  };
+  }
 
   interface DefaultAddHeaders {
     'x-ratelimit-limit'?: boolean;
