@@ -323,5 +323,5 @@ module.exports = fp(fastifyRateLimit, {
   fastify: '4.x',
   name: '@driffle/fastify-watchman'
 })
-
-module.exports.RateLimitter = fastifyRateLimit
+module.exports.default = fastifyRateLimit
+module.exports.fastifyRateLimit = fastifyRateLimit
