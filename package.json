@@ -1,5 +1,5 @@
 {
-  "name": "@driffle/fastify-watch-man",
+  "name": "@driffle/fastify-watchman",
   "version": "${VERSION}",
   "description": "A low overhead rate limiter for your routes",
   "main": "index.js",
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Driffle/fastify-watch-man.git"
+    "url": "git+https://github.com/Driffle/fastify-watchman.git"
   },
   "keywords": [
     "fastify",
@@ -25,9 +25,9 @@
   "author": "Tomas Della Vedova - @delvedor (http://delved.org)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Driffle/fastify-watch-man/issues"
+    "url": "https://github.com/Driffle/fastify-watchman/issues"
   },
-  "homepage": "https://github.com/Driffle/fastify-watch-man#readme",
+  "homepage": "https://github.com/Driffle/fastify-watchman#readme",
   "devDependencies": {
     "@fastify/pre-commit": "^2.1.0",
     "@sinonjs/fake-timers": "^13.0.1",
