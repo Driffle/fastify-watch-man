@@ -63,11 +63,11 @@ declare namespace fastifyRateLimit {
     ): FastifyRateLimitStore;
   }
 
-  type RateLimitHeadersType = {
-    rateLimit: string;
-    rateRemaining: string;
-    rateReset: string;
-    retryAfter: string;
+  interface RateLimitHeaders {
+    rateLimit?: string;
+    rateRemaining?: string;
+    rateReset?: string;
+    retryAfter?: string;
   };
 
   interface DefaultAddHeaders {
@@ -133,7 +133,7 @@ declare namespace fastifyRateLimit {
     enableDraftSpec?: boolean;
     onExceeding?: (req: FastifyRequest, key: string) => void;
     onExceeded?: (req: FastifyRequest, key: string) => void;
-    defaultHeaders?: RateLimitHeadersType; 
+    defaultHeaders?: RateLimitHeaders; 
   }
 
   export interface RateLimitPluginOptions extends RateLimitOptions {

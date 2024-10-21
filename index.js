@@ -34,19 +34,13 @@ const defaultErrorResponse = (req, context) => {
   return err
 }
 
-const areHeadersMatching = (customHeaders) => {
+const hasCommonKeys = (customHeaders) => {
   for (const key in defaultHeaders) {
-    // Check if key exists in targetObj
-    if (!(key in customHeaders)) {
-      return false
-    }
-    // Check if value types are the same
-    if (typeof defaultHeaders[key] !== typeof customHeaders[key]) {
-      return false
+    if (Object.prototype.hasOwnProperty.call(customHeaders, key)) {
+      return true
     }
   }
-
-  return true
+  return false
 }
 
 const getMergedHeaders = (customHeaders) => {
@@ -74,7 +68,7 @@ async function fastifyRateLimit (fastify, settings) {
     globalParams.labels = draftSpecHeaders
   } else {
     globalParams.enableDraftSpec = false
-    if (settings.defaultHeaders && typeof settings.defaultHeaders === 'object' && areHeadersMatching(settings.defaultHeaders)) {
+    if (settings.defaultHeaders && typeof settings.defaultHeaders === 'object' && hasCommonKeys(settings.defaultHeaders)) {
       globalParams.labels = getMergedHeaders(settings.defaultHeaders)
     } else globalParams.labels = defaultHeaders
   }
